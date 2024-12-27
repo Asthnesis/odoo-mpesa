@@ -1,0 +1,59 @@
+<odoo>
+    <!-- Tree View -->
+    <record id="view_mpesa_transaction_tree" model="ir.ui.view">
+        <field name="name">mpesa.transaction.tree</field>
+        <field name="model">mpesa.transaction</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="transaction_id"/>
+                <field name="receipt_no"/>
+                <field name="debit_party_name"/>
+                <field name="initiated_time"/>
+                <field name="finalized_time"/>
+                <field name="transaction_status"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_mpesa_transaction_form" model="ir.ui.view">
+        <field name="name">mpesa.transaction.form</field>
+        <field name="model">mpesa.transaction</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="transaction_id"/>
+                        <field name="receipt_no"/>
+                        <field name="debit_party_name"/>
+                        <field name="initiated_time"/>
+                        <field name="finalized_time"/>
+                        <field name="transaction_status"/>
+                        <field name="amount"/>
+                        <field name="result_code"/>
+                        <field name="result_description"/>
+                        <field name="conversation_id"/>
+                        <field name="originator_conversation_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_mpesa_transaction" model="ir.actions.act_window">
+        <field name="name">Mpesa Transactions</field>
+        <field name="res_model">mpesa.transaction</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Manage Mpesa transaction records. These include transaction details like amount, status, and timestamps.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="menu_mpesa_transaction_root" name="Mpesa" sequence="10"/>
+    <menuitem id="menu_mpesa_transaction" name="Transactions" parent="menu_mpesa_transaction_root" action="action_mpesa_transaction" sequence="10"/>
+</odoo>

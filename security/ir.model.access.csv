@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mpesa_transaction_user,access_mpesa_transaction_user,model_mpesa_transaction,base.group_user,1,0,0,0
+access_mpesa_transaction_manager,access_mpesa_transaction_manager,model_mpesa_transaction,base.group_system,1,1,1,1
